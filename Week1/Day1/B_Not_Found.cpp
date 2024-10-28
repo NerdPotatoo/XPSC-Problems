@@ -12,14 +12,18 @@ int32_t main()
 {
     fastIO;
     // CODE HERE
-    int a, b, t, ans = 0;
-    cin>>a>>b>>t;
-    int i = a;
-    while(i<=t)
+    string s;
+    cin>>s;
+    sort(s.begin(),s.end());
+    unique(s.begin(),s.end());
+    for(char i = 'a'; i <= 'z'; i++)
     {
-        ans += b;
-        i+=a;
+        if(s[i-'a'] != i)
+        {
+            cout<<i<<endl;
+            return 0;
+        }
     }
-    cout<<ans;
+    cout<<"None\n";
     return 0;
 }
